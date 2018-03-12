@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Node Editor</title>
+
+
+    <link rel='stylesheet prefetch' href='https://cdn.jsdelivr.net/npm/d3-node-editor@0.5.3/build/d3-node-editor.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="dist/css/main.css">
+
+
+</head>
+<body>
+
+<div id="wrapper" class="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <a id="brand" href="#">
+            <img id="brand-img" src="./src/images/KeesWerktLogo.png" alt="">
+        </a>
+        <ul class="sidebar-nav">
+            <li>
+                <a href="#">Editor</a>
+            </li>
+            <li>
+                <a href="#">Shortcuts</a>
+            </li>
+            <li>
+                <a href="#">Overview</a>
+            </li>
+            <li>
+                <a href="#">Events</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle"><span class="oi oi-menu"></span></a>
+            <div class="editor-container">
+                <h2>Workflow Editor</h2>
+                <div id="bricks-basket" class="bricks bricks-basket">
+                    <div class="brick task" data-index="0" dragable="false">
+                        <h3 class="brick-header">Taak</h3>
+                           <span class="brick-handle oi oi-move"></span>
+                        <input class="brick-input" name="task" type="text">
+                    </div>
+                    <div class="brick action" data-index="0" dragable="false">
+                        <h3 class="brick-header">Actie</h3>
+                        <span class="brick-handle oi oi-move"></span>
+                        <input class="brick-input" name="action" type="text">
+                    </div>
+                    <div class="brick decision" data-index="0" dragable="false">
+                        <h3 class="brick-header">Beslissing</h3>
+                        <span class="brick-handle oi oi-move"></span>
+                        <input class="brick-input" name="decision" type="text">
+                    </div>
+                    <div class="brick end" data-index="0" dragable="false">
+                        <h3 class="brick-header">Einde</h3>
+                        <span class="brick-handle oi oi-move"></span>
+                        <input class="brick-input" name="end" type="text">
+                    </div>
+                </div>
+                <form id="bricks-editor" class="bricks bricks-editor">
+                    <div id="column-1" class="column column-1"></div>
+                    <div id="column-2" class="column column-2"></div>
+                    <div id="column-3" class="column column-3"></div>
+                    <input type="submit" id="saveButton" class="btn btn-success">
+
+                </form>
+            <!--<div id="nodeEditor" class="node-editor "></div>-->
+            </div>
+
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <footer class="footer">
+               <span>&copy; KeesWerkt 2018 </span>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src='https://cdn.jsdelivr.net/npm/d3@4.10.2/build/d3.min.js'></script>
+<!--// D3.js for D3 Node Editor //-->
+<script src='https://cdn.jsdelivr.net/npm/alight@0.14.0/alight.min.js'></script>
+<!--// Angular Light for D3 Node Editor //-->
+<script src='https://cdn.jsdelivr.net/npm/d3-node-editor@0.5.3/build/d3-node-editor.js'></script>
+<!--// D3 Node Editor //-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!--// jQuery //-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--// Bootstrap js //-->
+<script src="src/js/sortable.js"></script>
+
+<script src="dist/js/main.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+        $(".oi").toggleClass("oi-menu oi-x");
+    });
+</script>
+
+</body>
+</html>
